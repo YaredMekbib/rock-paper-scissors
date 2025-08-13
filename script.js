@@ -49,3 +49,5 @@ function playRound(humanChoice, computerChoice) {
         return ("Invalid input. Please choose Rock, Paper, or Scissors");
     }
 }
+
+console.log(getHumanChoice());
