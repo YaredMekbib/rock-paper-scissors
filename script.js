@@ -25,7 +25,7 @@ function playRound(humanChoice, computerChoice) {
     computerChoice = computerChoice.toLowerCase();
 
     if (humanChoice === computerChoice){
-        return ("Its a tie!");
+        return ("Its a tie!") + " userScore =" + userScore + " " + "computerScore=" + computerScore;
     }
     else if
     (   (humanChoice === "rock" && computerChoice === "scissors") ||
@@ -33,7 +33,7 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice === "paper" && computerChoice === "rock"))
         {
             userScore = userScore + 1;
-            return ("One point for the user!");
+            return ("One point for the user!") + " userScore =" + userScore + " " + "computerScore=" + computerScore;
         }
 
     else if
@@ -42,12 +42,12 @@ function playRound(humanChoice, computerChoice) {
         (computerChoice === "paper" && humanChoice === "rock")) 
         {
             computerScore = computerScore + 1;
-            return ("One point for the computer!");
+            return ("One point for the computer!") + " userScore =" + userScore + " " + "computerScore=" + computerScore;
         }
         
     else {
-        return ("Invalid input. Please choose Rock, Paper, or Scissors");
+        return ("Invalid input. Please choose Rock, Paper, or Scissors") + " userScore =" + userScore + " " + "computerScore=" + computerScore;
     }
 }
 
-console.log(getHumanChoice());
+console.log(playRound(getHumanChoice(),getComputerChoice()));
