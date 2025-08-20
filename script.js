@@ -1,53 +1,58 @@
 function getComputerChoice() {
-    const x = Math.random();
+    let computerChoice = Math.random();
 
-    if (x < 1/3) {
-        return("Rock");
+    if (computerChoice > 0 && computerChoice < 1/3) {
+        computerChoice = "Rock";
     }
-    else if (x < 2/3) {
-        return("Scissors");
+    else if (computerChoice > 1/3 && computerChoice < 2/3) {
+        computerChoice = "Scissors";
     }
-    else {
-        return("Paper");
+    else if (computerChoice > 2/3 && computerChoice < 1) {
+        computerChoice = "Paper";
     }
-    
+    return computerChoice.toLowerCase();    
 }
 
 function getHumanChoice() {
-    let choice = prompt("Rock, Paper, or Scissors?")
-    return choice;
+    let humanChoice = prompt("Rock, Paper, or Scissors?")
+    return humanChoice.toLowerCase();
 }
+
 userScore = 0;
 computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-    computerChoice = computerChoice.toLowerCase();
+function playRound(humanChoice, computerChoice){
 
     if (humanChoice === computerChoice){
-        return ("Its a tie!") + " userScore =" + userScore + " " + "computerScore=" + computerScore;
+        console.log("Its a tie!" + " userScore=" + userScore + " " + "computerScore=" + computerScore);
     }
+    
     else if
     (   (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "scissors" && computerChoice === "paper") ||
         (humanChoice === "paper" && computerChoice === "rock"))
         {
             userScore = userScore + 1;
-            return ("One point for the user!") + " userScore =" + userScore + " " + "computerScore=" + computerScore;
+            console.log("One point for the user!" + " userScore=" + userScore + " " + "computerScore=" + computerScore);
         }
-
     else if
     (   (computerChoice === "rock" && humanChoice === "scissors") ||
         (computerChoice === "scissors" && humanChoice === "paper") ||
-        (computerChoice === "paper" && humanChoice === "rock")) 
+        (computerChoice === "paper" && humanChoice === "rock"))
         {
             computerScore = computerScore + 1;
-            return ("One point for the computer!") + " userScore =" + userScore + " " + "computerScore=" + computerScore;
+            console.log("One point for the computer!" + " userScore=" + userScore + " " + "computerScore=" + computerScore);
         }
-        
     else {
-        return ("Invalid input. Please choose Rock, Paper, or Scissors") + " userScore =" + userScore + " " + "computerScore=" + computerScore;
+        console.log("Please enter a valid input of either Rock, Paper, or Scissors")
     }
 }
 
-console.log(playRound(getHumanChoice(),getComputerChoice()));
+function playGame(){
+playRound(getHumanChoice(), getComputerChoice());
+playRound(getHumanChoice(), getComputerChoice());
+playRound(getHumanChoice(), getComputerChoice());
+playRound(getHumanChoice(), getComputerChoice());
+playRound(getHumanChoice(), getComputerChoice());
+}
+playGame();
