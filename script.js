@@ -48,11 +48,28 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-function playGame(){
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-playRound(getHumanChoice(), getComputerChoice());
-}
-playGame();
+const rockButton = document.querySelector(button.rock);
+const paperButton = document.querySelector(button.paper);
+const scissors = document.querySelector(button.scissors);
+
+rockButton.addEventListener("click", () => {
+    playRound(button.rock, getComputerChoice());
+});
+paperButton.addEventListener("click", () => {
+    playRound(button.paper, getComputerChoice());
+});
+scissors.button.addEventListener("click", () => {
+    playRound(scissors.button, getComputerChoice());
+});
+
+
+
+// function that plays five rounds
+// function playGame(){ 
+// playRound(getHumanChoice(), getComputerChoice());
+// playRound(getHumanChoice(), getComputerChoice());
+// playRound(getHumanChoice(), getComputerChoice());
+// playRound(getHumanChoice(), getComputerChoice());
+// playRound(getHumanChoice(), getComputerChoice());
+// }
+// playGame();
